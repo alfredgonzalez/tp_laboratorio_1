@@ -46,15 +46,15 @@ int main()
 			case 3:
 			     if(flagNum1==1&& flagNum2 == 1)
                 {
-                    printf("Calcular la suma (%f+%f)\n", variableA, variableB);
+                    printf("Calcular la suma (%.2f+%.2f)\n", variableA, variableB);
                     resultadoSuma = SumarFloat(variableA, variableB);
-                    printf("Calcula la resta (%f-%f)\n", variableA, variableB);
+                    printf("Calcula la resta (%.2f-%.2f)\n", variableA, variableB);
                     resultadoResta = RestarFloat(variableA, variableB);
-                    printf("Calcular la division(%f/%f)\n", variableA, variableB);
+                    printf("Calcular la division(%.2f/%.2f)\n", variableA, variableB);
                     resultadoDivision = DividirFloat(variableA, variableB);
-                    printf("Calcular la multiplicacion(%f*%f)\n", variableA, variableB);
+                    printf("Calcular la multiplicacion(%.2f*%.2f)\n", variableA, variableB);
                     resultadoMultiplicacion = MultiplicarFloat(variableA, variableB);
-                    printf("Calcular el factorial (!%f), (!%f)\n", variableA, variableB);
+                    printf("Calcular el factorial (!%.0f), (!%.0f)\n", variableA, variableB);
                     validarFactorialA = ValidarSiEsEntero(variableA);
                     resultadoFactorialA = FactorialFloat(variableA);
                     validarFactorialB = ValidarSiEsEntero(variableB);
@@ -83,20 +83,20 @@ int main()
 			case 4:
 			    if(operacionesRealizadas == 1)
                 {
-			        printf("El resultado de %f+%f es: %f\n", variableA, variableB, resultadoSuma);
-                    printf("El resultado de %f-%f es: %f\n", variableA, variableB, resultadoResta);
+			        printf("El resultado de %.2f+%.2f es: %.2f\n", variableA, variableB, resultadoSuma);
+                    printf("El resultado de %.2f-%.2f es: %.2f\n", variableA, variableB, resultadoResta);
                     if(variableB==0)
                     {
                         printf("No es posible dividir por 0\n");
                     }
                     else
                     {
-                        printf("El resultado de %f/%f es: %f\n", variableA, variableB, resultadoDivision);
+                        printf("El resultado de %.2f/%.2f es: %.2f\n", variableA, variableB, resultadoDivision);
                     }
-                    printf("El resultado de %f*%f es: %f\n", variableA, variableB, resultadoMultiplicacion);
+                    printf("El resultado de %.2f*%.2f es: %.2f\n", variableA, variableB, resultadoMultiplicacion);
                     if(validarFactorialA==1&&resultadoFactorialA!=0)
                     {
-                        printf("El factorial de %f es: %f\n", variableA, resultadoFactorialA);
+                        printf("El factorial de %.0f es: %f\n", variableA, resultadoFactorialA);
                     }
                     else
                     {
@@ -104,7 +104,7 @@ int main()
                     }
                     if(validarFactorialB==1&&resultadoFactorialB!=0)
                     {
-                        printf("El factorial de %f es: %f\n", variableB, resultadoFactorialB);
+                        printf("El factorial de %.0f es: %f\n", variableB, resultadoFactorialB);
                     }
                     else
                     {
