@@ -3,6 +3,7 @@
 #include "LinkedList.h"
 #include "Controller.h"
 #include "Employee.h"
+#include "Biblio.h"
 
 /****************************************************
     Menu:
@@ -22,17 +23,62 @@
 
 int main()
 {
-    int option = 0;
 
-    LinkedList* listaEmpleados = ll_newLinkedList();
-    do{
-        switch(option)
-        {
-            case 1:
-                controller_loadFromText("data.csv",listaEmpleados);
-                break;
-        }
-    }while(option != 10);
-    return 0;
+	setbuf(stdout,NULL);
+	int option = 0;
+
+	LinkedList* listaEmpleados = ll_newLinkedList();
+	do{
+		option =  menuOpcion();
+		switch(option)
+		{
+		case 1:
+			controller_loadFromText("data.csv",listaEmpleados);
+			break;
+		case 2:
+			controller_loadFromBinary("data.bin",listaEmpleados);
+			break;
+		case 3:
+			controller_addEmployee(listaEmpleados);
+			printf("NUEVO EMPLEADO AGREGADO CORRECTAMENTE \n");
+			break;
+		case 4:
+			controller_editEmployee(listaEmpleados);
+			printf("EDICION REALIZADA CON EXITO\n");
+			break;
+		case 5:
+			controller_removeEmployee(listaEmpleados);
+			printf("OPERACION EXITOSA \n");
+
+			break;
+		case 6:
+			controller_ListEmployee(listaEmpleados);
+			printf("LISTADO DE EMPLEADOS \n");
+
+			break;
+		case 7:
+			controller_sortEmployee(listaEmpleados);
+			printf("DATOS ORDENADOS CORRECTAMENTE \n");
+			break;
+		case 8:
+			controller_saveAsText("data.csv", listaEmpleados);
+			printf("DATOS TEXTO CARGADOS CORRECTAMENTE \n");
+
+			break;
+		case 9:
+			controller_saveAsBinary("data.bin", listaEmpleados);
+			printf("DATOS BIN CARGADOS CORRECTAMENTE \n");
+			break;
+		case 10:
+			printf("GRACIAS POR ELEGIRNOS \n");
+			break;
+		default:
+			printf("Opcion invalida \n");
+			break;
+		}
+		system("pause");
+	}while(option != 10);
+	ll_deleteLinkedList(listaEmpleados);
+	return 0;
 }
 
